@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f7f7fb">
+    <title>My English Journal</title>
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#6258d9">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app">
+        <header class="header">
+            <div>
+                <h1>My English Journal</h1>
+                <p>Электронный журнал посещаемости</p>
+            </div>
+            <div class="header-icon">📚</div>
+        </header>
+
+        <main>
+            <section class="lesson-card">
+                <h2>Урок</h2>
+
+                <div class="lesson-fields">
+                    <div class="field">
+                        <label for="lessonDate">Дата урока</label>
+                        <input type="date" id="lessonDate">
+                    </div>
+
+                    <div class="field">
+                        <label for="lessonTopic">Тема урока</label>
+                        <input type="text" id="lessonTopic"
+                               placeholder="Например: Present Simple">
+                    </div>
+                </div>
+
+                <button id="saveLesson" class="primary-btn">
+                    Сохранить урок
+                </button>
+            </section>
+
+            <section class="attendance-card">
+                <div class="section-heading">
+                    <div>
+                        <h2>Ученики</h2>
+                        <p id="studentCount">Всего: 0</p>
+                    </div>
+                    <button id="addStudentBtn" class="add-btn">
+                        + Добавить
+                    </button>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Имя и фамилия</th>
+                                <th>Пришёл</th>
+                                <th>Отсутствует</th>
+                                <th>Пропуски</th>
+                                <th>Действия</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentsTable">
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="statistics">
+                <div class="stat-card green">
+                    <span>Пришли сегодня</span>
+                    <strong id="presentCount">0</strong>
+                </div>
+
+                <div class="stat-card red">
+                    <span>Отсутствуют сегодня</span>
+                    <strong id="absentCount">0</strong>
+                </div>
+
+                <div class="stat-card blue">
+                    <span>Всего учеников</span>
+                    <strong id="totalCount">0</strong>
+                </div>
+            </section>
+
+            <section class="history-card">
+                <h2>История уроков</h2>
+                <div id="historyList">
+                    <p class="empty">Пока уроков нет</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            My English Journal © 2026
+        </footer>
+    </div>
+    <div class="backup-section">
+    <h3>Резервная копия</h3>
+    <p>Сохраняйте копию журнала, чтобы не потерять данные.</p>
+
+    <button id="exportBackup" class="backup-btn">
+        Скачать резервную копию
+    </button>
+
+    <button id="importBackupBtn" class="backup-btn">
+        Восстановить копию
+    </button>
+
+    <input
+        type="file"
+        id="importBackup"
+        accept=".json,application/json"
+        hidden
+    >
+</div>
+
+    <script src="script.js"></script>
+    <script>
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./sw.js")
+            .then(() => console.log("Offline mode activated"))
+            .catch(error => console.error("Service Worker error:", error));
+    });
+}
+</script>
+</body>
+</html>

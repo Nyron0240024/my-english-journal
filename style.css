@@ -1,0 +1,353 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f6fa;
+    color: #25263a;
+}
+
+.app {
+    max-width: 1250px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 28px;
+    color: #33345c;
+}
+
+.header p {
+    color: #85869a;
+    margin-top: 7px;
+    font-size: 14px;
+}
+
+.header-icon {
+    background: #e9e8ff;
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 28px;
+}
+
+.lesson-card,
+.attendance-card,
+.history-card {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    margin-bottom: 22px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.04);
+}
+
+h2 {
+    font-size: 19px;
+    margin-bottom: 20px;
+    color: #33345c;
+}
+
+.lesson-fields {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+label {
+    font-size: 13px;
+    color: #77788c;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #e1e2eb;
+    border-radius: 9px;
+    outline: none;
+    font-size: 14px;
+    background: #fff;
+    color: #25263a;
+}
+
+input:focus {
+    border-color: #7773e8;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 9px;
+    transition: 0.2s;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+.primary-btn {
+    background: #6c63d9;
+    color: white;
+    padding: 13px 22px;
+    font-weight: bold;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    margin-bottom: 5px;
+}
+
+.section-heading p {
+    font-size: 13px;
+    color: #88899a;
+}
+
+.add-btn {
+    background: #e9e8ff;
+    color: #625bd0;
+    padding: 12px 17px;
+    font-weight: bold;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+}
+
+th {
+    text-align: left;
+    padding: 15px 10px;
+    background: #f7f7fb;
+    color: #77788c;
+    font-size: 12px;
+}
+
+td {
+    padding: 14px 10px;
+    border-bottom: 1px solid #f0f0f5;
+    font-size: 14px;
+}
+
+.statistics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.stat-card {
+    background: white;
+    padding: 22px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.03);
+}
+
+.stat-card span {
+    font-size: 13px;
+    color: #77788c;
+}
+
+.stat-card strong {
+    font-size: 30px;
+}
+
+.green strong {
+    color: #20a36b;
+}
+
+.red strong {
+    color: #e15c69;
+}
+
+.blue strong {
+    color: #5c79d8;
+}
+
+.history-card {
+    min-height: 100px;
+}
+
+.empty {
+    color: #999;
+    font-size: 14px;
+}
+
+footer {
+    text-align: center;
+    color: #aaa;
+    font-size: 12px;
+    padding: 20px;
+}
+
+@media (max-width: 650px) {
+    .app {
+        padding: 18px 12px;
+    }
+
+    .header h1 {
+        font-size: 22px;
+    }
+
+    .lesson-card,
+    .attendance-card,
+    .history-card {
+        padding: 17px;
+    }
+
+    .lesson-fields {
+        grid-template-columns: 1fr;
+    }
+
+    .statistics {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .stat-card {
+        padding: 16px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .stat-card strong {
+        font-size: 24px;
+    }
+
+    .section-heading {
+        gap: 10px;
+    }
+}
+
+/* Кнопки посещаемости */
+
+.mark-btn {
+    width: 38px;
+    height: 35px;
+    font-size: 21px;
+    font-weight: bold;
+    background: #f1f1f5;
+    color: #888;
+    border-radius: 8px;
+}
+
+.mark-btn.present {
+    color: #159b62;
+    background: #e5f7ee;
+}
+
+.mark-btn.absent {
+    color: #dc5260;
+    background: #ffebed;
+}
+
+.mark-btn.present.selected {
+    background: #159b62;
+    color: white;
+}
+
+.mark-btn.absent.selected {
+    background: #dc5260;
+    color: white;
+}
+
+.history-btn {
+    padding: 8px 10px;
+    background: #fff0f0;
+    color: #d34f5c;
+    font-size: 12px;
+}
+
+.small-btn {
+    padding: 8px;
+    background: #f0efff;
+    margin: 2px;
+}
+
+.delete-btn {
+    background: #ffeded;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 17px 5px;
+    border-bottom: 1px solid #eeeef3;
+}
+
+.history-item p {
+    margin-top: 6px;
+    font-size: 14px;
+}
+
+.history-item small {
+    display: block;
+    margin-top: 8px;
+    color: #85869a;
+}
+
+.history-actions {
+    display: flex;
+    gap: 5px;
+}
+.backup-section {
+    margin-top: 25px;
+    padding: 20px;
+    background: #f7f7fb;
+    border-radius: 12px;
+}
+
+.backup-section h3 {
+    margin-bottom: 8px;
+}
+
+.backup-section p {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.backup-btn {
+    padding: 11px 15px;
+    margin: 5px 5px 5px 0;
+    border-radius: 8px;
+    background: #6258d9;
+    color: white;
+    font-size: 14px;
+}

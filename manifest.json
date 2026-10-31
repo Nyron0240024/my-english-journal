@@ -1,0 +1,10 @@
+{
+  "name": "My English Journal",
+  "short_name": "English Journal",
+  "description": "Elektron davomat jurnali",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#6258d9",
+  "orientation": "portrait"
+}
